@@ -29,11 +29,9 @@ class School
 
   def sort()
     roster.each do |grade, names|
-      sorted_roster[grade] = []
-      sorted_roster[grade] << names.sort
+      names.sort!
     end
-    sorted_roster
-    ###roster.sort.to_h
+    roster.sort.to_h
   end
 
 
