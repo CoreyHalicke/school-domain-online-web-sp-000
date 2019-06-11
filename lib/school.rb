@@ -1,9 +1,9 @@
 class School
   attr_accessor
-  attr_reader :school, :roster
+  attr_reader :school, :roster, :sorted_roster
 
   roster = {}
-  sorted = {}
+  sorted_roster = {}
 
    def initialize(school)
      @school = school
@@ -28,9 +28,12 @@ class School
   end
 
   def sort()
-    #puts sorted[grade] = names.sort
-
-    #roster.sort.to_h
+    roster.each do |grade, names|
+      sorted_roster[grade] = []
+      sorted_roster[grade] << names.sort
+    end
+    sorted_roster
+    ###roster.sort.to_h
   end
 
 
